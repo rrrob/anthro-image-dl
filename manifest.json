@@ -1,0 +1,30 @@
+{
+	"name": "Anthropologie Product Image Auto Downloader",
+	"short_name": "Anthro Image Downloader",
+	"version": "0.1.1",
+	"manifest_version": 2,
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+	"page_action": {
+		"default_icon": "icon128.png",
+    "default_title": "Download images!"
+
+	},
+	"content_scripts": [{
+		"matches": [
+      "http://www.anthropologie.com/anthro/*",
+			"http://us.anthropologie.com/anthro/*"
+		],
+		"js": [
+      "src/jquery.min.js",
+      "src/content.js"]
+	}],
+	"permissions": [
+    "http://www.anthropologie.com/*",
+		"http://us.anthropologie.com/*",
+    "declarativeContent",
+    "downloads",
+    "downloads.open"
+	]
+}
